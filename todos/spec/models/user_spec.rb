@@ -8,6 +8,5 @@ describe User, '#todos' do
     user = User.new('me@example.com')
 
     expect(user.todos) 
-
   end
 end
