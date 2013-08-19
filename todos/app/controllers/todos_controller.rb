@@ -9,6 +9,12 @@ class TodosController < ApplicationController
 
   def create
     Todo.create(params[:todo].permit(:name))
-    redirect_to todos_path 
+    redirect_to todos_path
   end
+
+  # private
+  # def todo_params
+  #   Todo.create(params[:todo].permit(:name))
+  # end
+
 end
