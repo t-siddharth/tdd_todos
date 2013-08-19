@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.where(owner_email: current_email)
+    @todos = current_user.todos #Todo.where(owner_email: current_email)
   end
 
   def new
@@ -8,7 +8,9 @@ class TodosController < ApplicationController
   end
 
   def create
-    Todo.create (params[:todo].merge(owner_email: current_email).permit(:name, :owner_email))
+    current_user.todos.create params[:todo].permit(:name)
+    # Todo.user (params[:todo].merge(owner_email: current_email).permit(:name, :owner_email))
+    # Todo.create (params[:todo].merge(owner_email: current_email).permit(:name, :owner_email))
     redirect_to todos_path
   end
 
