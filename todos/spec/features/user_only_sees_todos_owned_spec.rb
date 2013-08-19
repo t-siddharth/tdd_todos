@@ -9,7 +9,7 @@ feature 'User only sees todos owned' do
     # fill_in 'Email', with: 'me@example.com'
     # click_on 'Submit'
 
-    sign_in_as 'me@example.com'
+    sign_in
     expect(page).not_to have_css '.todos li', text: 'Buy bread'
   end
 end
