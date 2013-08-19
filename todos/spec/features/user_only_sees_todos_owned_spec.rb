@@ -4,12 +4,7 @@ feature 'User only sees todos owned' do
   scenario "does not see other users' todos" do
     Todo.create! owner_email: 'not_me@example.com', name: 'Buy bread' #setup
 
-    # visit root_path
-    # click_on 'Sign in'
-    # fill_in 'Email', with: 'me@example.com'
-    # click_on 'Submit'
-
-    sign_in
-    expect(page).not_to have_css '.todos li', text: 'Buy bread'
+    sign_in_as 'me@example.com'
+    expect(page).not_to display_todo_named 'Buy bread'
   end
 end

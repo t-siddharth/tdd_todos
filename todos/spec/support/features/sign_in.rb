@@ -1,7 +1,7 @@
 module Features
   
   def sign_in()
-    sign_in_as 'me@example.com'
+    sign_in_as 'person@example.com'
   end
 
   def sign_in_as(email)
