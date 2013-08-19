@@ -7,11 +7,7 @@ describe User, '#todos' do
 
     user = User.new('me@example.com')
 
-    # todos = user.todos --- EXERCISE
-
-    # expect(todos).to eq [todo_owned_by_user] --- VERIFY
-
-    expect(user.todos) #verify and exercise in the same line - in this case to avoid the 
+    expect(user.todos) 
 
   end
 end
