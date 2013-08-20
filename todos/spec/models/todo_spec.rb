@@ -12,7 +12,7 @@ describe Todo, '#completed?' do
   end
 
   it 'returns false if completed_at is not assigned' do
-    todo = Todo.new completed_at: nil #explicitly calling it out to be nil and the assertion ought to work even if there is a default value in the db or any other constructor or logic causes..
+    todo = Todo.new completed_at: nil
 
     expect(todo).not_to be_completed
   end
